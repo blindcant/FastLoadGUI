@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FastLoadController">
+    <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+                    <MenuBar fx:id="menuBar_top" BorderPane.alignment="CENTER">
+                        <menus>
+                            <Menu fx:id="menu_file" mnemonicParsing="true" text="File">
+                                <items>
+                                    <MenuItem fx:id="menuItem_open" mnemonicParsing="true" onAction="#openFileMenuItem" text="Open" />
+                                    <MenuItem fx:id="menuItem_run" mnemonicParsing="true" onAction="#runFileMenuItem" text="Run" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem fx:id="menuItem_quit" mnemonicParsing="true" onAction="#quitProgram" text="Quit" />
+                                </items>
+                            </Menu>
+                            <Menu fx:id="menu_help" mnemonicParsing="true" text="Help">
+                                <items>
+                                    <MenuItem fx:id="menuItem_about" mnemonicParsing="true" onAction="#openAboutMenuItem" text="About" />
+                        <MenuItem fx:id="menuItem_licence" mnemonicParsing="true" onAction="#openLicenceMenuItem" text="Licence" />
+                                    <MenuItem fx:id="menuItem_help" mnemonicParsing="true" onAction="#openHelpMenuItem" text="Help" />
+                                </items>
+                            </Menu>
+                        </menus>
+               <tooltip>
+                  <Tooltip text="A menu for additional options.">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
+                    </MenuBar>
+         </top>
+         <left>
+                <AnchorPane id="inputPane" BorderPane.alignment="CENTER">
+                    <children>
+                        <GridPane hgap="16.0" layoutX="14.0" layoutY="49.0" prefHeight="350.0" prefWidth="389.0" vgap="24.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="187.0" minWidth="10.0" prefWidth="152.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.0" minWidth="10.0" prefWidth="221.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="* User name:">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="This is automagically populated the first time by the underpants gnomes.  If they got it wrong, update it...">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </Label>
+                                <TextField fx:id="textField_username" prefHeight="22.0" prefWidth="141.0" promptText="Teradata username" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="This is automagically populated the first time by the underpants gnomes.  If they got it wrong, update it...">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </TextField>
+                                <Label text="* Password:" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="This is your DHS universal password.  It will be saved to a local and secure file each time you click Run.  If you changed your universal password you will need to update this before clicking Run.">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </Label>
+                                <PasswordField fx:id="textField_password" prefHeight="22.0" prefWidth="141.0" promptText="DHS Universial Password" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="This is your DHS universal password.  It will be saved to a local and secure file each time you click Run.  If you changed your universal password you will need to update this before clicking Run.">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </PasswordField>
+                                <CheckBox fx:id="checkBox_sourceFileHeader" mnemonicParsing="false" text="Input File Has Header" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="You must tick this if the input file has a header row (line 1).  If you don't it will be included in the loaded data which may cause an error during FastLoad.  If there isn't a header, the program will create column_n for every column in your source dataset.">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </CheckBox>
+                                <CheckBox fx:id="checkBox_targetTableName" mnemonicParsing="false" text="Choose Table Name" GridPane.rowIndex="11">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Use this if you want to choose our own table name.  If you don't, the filename will be used.  There are some validation rules that apply though (see README.txt)..">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </CheckBox>
+                                <TextField fx:id="textField_targetTableName" editable="false" opacity="0.5" prefHeight="22.0" prefWidth="177.0" promptText="less_than_or_equal_to_27_chars" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Use this if you want to choose our own table name.  If you don't, the filename will be used.  There are some validation rules that apply though.">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </TextField>
+                                <ComboBox fx:id="comboBox_targetColumnCharSet" maxWidth="1.7976931348623157E308" prefHeight="22.0" prefWidth="169.0" promptText="Column Charset" visibleRowCount="2" GridPane.rowIndex="12">
+                           <tooltip>
+                              <Tooltip text="TARGET COLUMN CHARSET: This sets the data type used to create text columns in Teradata.  LATIN is default and you don't need to select it if you want LATIN.  You must select UNICODE for UTF16 column data types.">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </ComboBox>
+                                <Button fx:id="button_browse" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openFileButton" prefWidth="64.0" text="Browse" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Use the Browse button to choose your weapon, I mean source file.">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                           <GridPane.margin>
+                              <Insets left="11.0" />
+                           </GridPane.margin>
+                        </Button>
+                                <CheckBox fx:id="checkBox_runUnpause" mnemonicParsing="false" text="Run Unpause Script" GridPane.rowIndex="14">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="If the FastLoad fails and the loading process is paused, then tick this and click Run.  An unpause script is created everytime in case you need it.">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </CheckBox>
+                                <Button fx:id="button_run" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#runButton" prefWidth="64.0" text="Run" GridPane.rowIndex="15">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="This will save your logon details and validate your input.  If the input is acceptable it will run the program.">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Button>
+                                <Button fx:id="button_quit" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#quitProgram" prefWidth="64.0" text="Quit" GridPane.columnIndex="1" GridPane.rowIndex="15">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="This will quit the program.">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </Button>
+                                <TextField fx:id="textField_sourceFilePath" editable="false" opacity="0.5" promptText="Choose The Absolute Path Via Browse" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Use the Browse button to choose your weapon, I mean source file.">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </TextField>
+                        <CheckBox fx:id="checkBox_targetSchemaName" mnemonicParsing="false" text="Choose Database Name" GridPane.rowIndex="10">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="The default is FIS_PRD_DB.  You only have to change this if you are loading into somewhere besdies FIS_PRD_DB.">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </CheckBox>
+                        <TextField fx:id="textField_targetSchemaName" editable="false" opacity="0.5" prefHeight="22.0" prefWidth="177.0" promptText="less_than_or_equal_to_30_chars" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="The default is FIS_PRD_DB.  You only have to change this if you are loading into somewhere besdies FIS_PRD_DB.">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </TextField>
+                        <ComboBox fx:id="comboBox_sourceFileDelimiter" prefWidth="150.0" promptText="Input File Delimiter" visibleRowCount="5" GridPane.rowIndex="5">
+                           <tooltip>
+                              <Tooltip text="INPUT FILE DELIMITER: Choose your file's delimiter.  If your file has the delimiter character within the column data, you must &quot;wrap your column data in double quotes&quot;..">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font></Tooltip>
+                           </tooltip>
+                           <GridPane.margin>
+                              <Insets left="11.0" />
+                           </GridPane.margin></ComboBox>
+                        <ComboBox fx:id="comboBox_sourceFileEncoding" maxWidth="1.7976931348623157E308" prefHeight="22.0" prefWidth="169.0" promptText="Input File Encoding" GridPane.rowIndex="6">
+                           <tooltip>
+                              <Tooltip text="INPUT FILE ENCODING: The default is UTF-8, but you can choose the input file's encoding if necessary.  If you don't understand file encoding, just use UTF-8.  Alternatively check the file's encoding with Notepad++.">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip></ComboBox>
+                        <Label text="*" GridPane.rowIndex="3" />
+                        <Label text="*" GridPane.rowIndex="5" />
+                        <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                        <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+                        <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="13" />
+                        <ComboBox fx:id="comboBox_targetServer" prefWidth="169.0" promptText="DHS Teradata Server" GridPane.rowIndex="8">
+                           <tooltip>
+                              <Tooltip text="DHS TERADATA SERVER: Production is default.  You may choose DEV/TEST if you wish." />
+                           </tooltip>
+                        </ComboBox>
+                        <ComboBox fx:id="comboBox_clientToServerCharset" prefWidth="169.0" promptText="Client&gt;Server Charset" GridPane.rowIndex="9">
+                           <tooltip>
+                              <Tooltip text="CLIENT TO SERVER CHARSET: Default is ASCII which covers both ASCII &amp; LATIN.  Only choose UTF-8 or UTF-16 if you are uploading Unicode characters, otherwise you are wasting space.">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </ComboBox>
+                            </children>
+                     <padding>
+                        <Insets top="8.0" />
+                     </padding>
+                        </GridPane>
+                        <AnchorPane layoutX="418.0" layoutY="41.0" />
+                  <ImageView fitHeight="221.0" fitWidth="389.0" layoutX="29.0" layoutY="618.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0">
+                     <image>
+                        <Image url="@Teradata.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="14.0" layoutY="14.0" text="Elements marked with a * are mandatory before a run attempt." AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="16.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar fx:id="progressIndicator" layoutX="16.0" layoutY="597.0" prefHeight="16.0" prefWidth="389.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0">
+                     <padding>
+                        <Insets bottom="16.0" />
+                     </padding></ProgressBar>
+                    </children>
+                </AnchorPane>
+         </left>
+         <center>
+                    <TextArea fx:id="textArea_consoleOutput" editable="false" wrapText="true" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Consolas" size="12.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="All internal program output will be displayed here.  All external output from fastload.exe will be displayed here.">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
+            </TextArea>
+         </center>
+      </BorderPane>
+    </children>
+</AnchorPane>
